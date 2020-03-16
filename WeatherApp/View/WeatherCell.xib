@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="WeatherCell" customModule="WeatherApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clear" translatesAutoresizingMaskIntoConstraints="NO" id="jQd-XB-gWQ">
+                        <rect key="frame" x="8" y="15" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="9pA-4z-NMr"/>
+                            <constraint firstAttribute="height" constant="50" id="SL7-PJ-bwj"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IqG-rM-Qv0">
+                        <rect key="frame" x="74" y="17" width="238" height="46"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Rh8-UJ-AbO">
+                                <rect key="frame" x="0.0" y="0.0" width="238" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkA-tI-G9J">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sq0-5g-OWQ">
+                                        <rect key="frame" x="144" y="0.0" width="94" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="1e3-4b-qOl">
+                                <rect key="frame" x="0.0" y="28.5" width="238" height="17.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mostly clear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydx-BY-82D">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnO-yB-m1O">
+                                        <rect key="frame" x="144" y="0.0" width="94" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="IqG-rM-Qv0" firstAttribute="leading" secondItem="jQd-XB-gWQ" secondAttribute="trailing" constant="16" id="2Lh-30-hzz"/>
+                    <constraint firstItem="IqG-rM-Qv0" firstAttribute="centerY" secondItem="jQd-XB-gWQ" secondAttribute="centerY" id="INA-e1-eq3"/>
+                    <constraint firstAttribute="trailing" secondItem="IqG-rM-Qv0" secondAttribute="trailing" constant="8" id="Jg9-ig-ZBI"/>
+                    <constraint firstItem="jQd-XB-gWQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NHw-kl-JCY"/>
+                    <constraint firstItem="jQd-XB-gWQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="UGe-PG-dgD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dayLabel" destination="UkA-tI-G9J" id="oYB-Gl-tDa"/>
+                <outlet property="maxTempLabel" destination="sq0-5g-OWQ" id="bwr-xw-omj"/>
+                <outlet property="minTempLabel" destination="nnO-yB-m1O" id="gVb-qp-inf"/>
+                <outlet property="weatherDescLabel" destination="ydx-BY-82D" id="ZWI-Qo-dlU"/>
+                <outlet property="wheaterImageView" destination="jQd-XB-gWQ" id="OOf-dh-cPu"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="156.69642857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Clear" width="107" height="107"/>
+    </resources>
+</document>
