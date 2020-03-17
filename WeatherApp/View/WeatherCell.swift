@@ -20,6 +20,7 @@ class WeatherCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        //self.contentView.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -28,6 +29,14 @@ class WeatherCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    func configureUIWithForecastData(forecast: Forecast) {
+        wheaterImageView.image = UIImage(named: forecast.weatherDescription)
+        weatherDescLabel.text = forecast.weatherDescription
+        dayLabel.text = forecast.date
+        maxTempLabel.text = forecast.maxTemp
+        minTempLabel.text = forecast.minTemp
+    }
     
     
     
