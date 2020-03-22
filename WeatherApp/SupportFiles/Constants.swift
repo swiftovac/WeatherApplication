@@ -18,8 +18,8 @@ let LATITUDE = "lat="
 let LONGITUDE = "&lon="
 let APP_ID = "&appid="
 let FORECAST = "forecast?"
-let CURRENT_WHEATER_URL = "\(BASE_URL)\(LATITUDE)35\(LONGITUDE)139\(APP_ID)\(API_KEY)"
-let FORECAST_URL = "\(FORECAST_BASE_URL)\(FORECAST)\(LATITUDE)35\(LONGITUDE)139\(APP_ID)\(API_KEY)"
+let CURRENT_WHEATER_URL = "\(BASE_URL)\(LATITUDE)\(Location.sharedInstance.latitude)\(LONGITUDE)\(Location.sharedInstance.longitude)\(APP_ID)\(API_KEY)"
+let FORECAST_URL = "\(FORECAST_BASE_URL)\(FORECAST)\(LATITUDE)\(Location.sharedInstance.latitude)\(LONGITUDE)\(Location.sharedInstance.longitude)\(APP_ID)\(API_KEY)"
 
 
 

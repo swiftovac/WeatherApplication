@@ -63,5 +63,7 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app need you location to give you weather information.</string>
 </dict>
 </plist>

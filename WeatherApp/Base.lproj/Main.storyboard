@@ -18,7 +18,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1e-sx-dvb" userLabel="CurrentWheaterContainerView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leskovac" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dep-9g-CLI">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CityName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dep-9g-CLI">
                                         <rect key="frame" x="8" y="52" width="398" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="euP-sA-6zQ"/>
@@ -27,7 +27,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rov-qa-IH7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="temp°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rov-qa-IH7">
                                         <rect key="frame" x="16" y="195" width="382" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="110" id="Jj8-JZ-CDJ"/>
@@ -39,7 +39,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GcH-8s-g9A">
                                         <rect key="frame" x="137" y="140" width="140" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mostly Clear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nX-Nv-Le7">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nX-Nv-Le7">
                                                 <rect key="frame" x="0.0" y="0.0" width="102" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="DZg-rd-Zwf"/>
@@ -49,7 +49,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clear" translatesAutoresizingMaskIntoConstraints="NO" id="bAU-YR-oOJ">
-                                                <rect key="frame" x="110" y="0.0" width="30.000000000000028" height="30.000000000000028"/>
+                                                <rect key="frame" x="110" y="0.0" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="9EY-ch-1So"/>
                                                     <constraint firstAttribute="height" constant="30" id="gyK-ht-Zqc"/>
@@ -63,7 +63,7 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAY, March 15, 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGJ-Bk-dJh">
-                                        <rect key="frame" x="16" y="321" width="382" height="21"/>
+                                        <rect key="frame" x="16" y="321" width="298" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="lVL-Tf-66g"/>
                                         </constraints>
@@ -71,6 +71,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="vcJ-kE-zBI">
+                                        <rect key="frame" x="369" y="305" width="37" height="37"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -80,18 +83,21 @@
                                     <constraint firstItem="GcH-8s-g9A" firstAttribute="top" secondItem="dep-9g-CLI" secondAttribute="bottom" constant="8" id="JrC-Wa-QnG"/>
                                     <constraint firstAttribute="trailing" secondItem="rov-qa-IH7" secondAttribute="trailing" constant="16" id="KU4-kL-65u"/>
                                     <constraint firstItem="rov-qa-IH7" firstAttribute="leading" secondItem="N1e-sx-dvb" secondAttribute="leading" constant="16" id="Oju-dy-w8E"/>
+                                    <constraint firstAttribute="bottom" secondItem="vcJ-kE-zBI" secondAttribute="bottom" constant="8" id="Wtc-ro-bHD"/>
                                     <constraint firstItem="GcH-8s-g9A" firstAttribute="centerX" secondItem="N1e-sx-dvb" secondAttribute="centerX" id="ayB-Od-2Xw"/>
                                     <constraint firstItem="hGJ-Bk-dJh" firstAttribute="leading" secondItem="N1e-sx-dvb" secondAttribute="leading" constant="16" id="djn-ck-rDU"/>
                                     <constraint firstItem="rov-qa-IH7" firstAttribute="top" secondItem="GcH-8s-g9A" secondAttribute="bottom" constant="25" id="hom-T1-k2e"/>
-                                    <constraint firstAttribute="trailing" secondItem="hGJ-Bk-dJh" secondAttribute="trailing" constant="16" id="nHp-1b-z0U"/>
+                                    <constraint firstAttribute="trailing" secondItem="hGJ-Bk-dJh" secondAttribute="trailing" constant="100" id="nHp-1b-z0U"/>
                                     <constraint firstAttribute="trailing" secondItem="dep-9g-CLI" secondAttribute="trailing" constant="8" id="r8U-Ei-9jS"/>
                                     <constraint firstItem="dep-9g-CLI" firstAttribute="top" secondItem="N1e-sx-dvb" secondAttribute="top" constant="52" id="s3U-ZS-Glw"/>
+                                    <constraint firstAttribute="trailing" secondItem="vcJ-kE-zBI" secondAttribute="trailing" constant="8" id="xzj-n9-kaT"/>
                                     <constraint firstAttribute="bottom" secondItem="hGJ-Bk-dJh" secondAttribute="bottom" constant="8" id="y2i-5B-uWe"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iB5-pJ-z32">
                                 <rect key="frame" x="0.0" y="350" width="414" height="546"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                         </subviews>
@@ -108,6 +114,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="vcJ-kE-zBI" id="05i-X4-PB1"/>
                         <outlet property="cityNameLabel" destination="dep-9g-CLI" id="P1X-hR-pmp"/>
                         <outlet property="dayLabel" destination="hGJ-Bk-dJh" id="vKo-cc-ShO"/>
                         <outlet property="tableView" destination="iB5-pJ-z32" id="Gqr-97-282"/>

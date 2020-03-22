@@ -14,16 +14,17 @@ class Forecast {
     
     var _date: String!
     var _weatherDesc: String!
-    var _minTemp: String!
-    var _maxTemp: String!
+ 
+    var _maxTemp: Double!
+    var _hour: String!
     
-    
-//    init(date: String, weatherDesc: String, minTemp:String, maxTemp:String) {
-//        _date = date
-//        _weatherDesc = weatherDesc
-//        _minTemp = minTemp
-//        _maxTemp = maxTemp
-//    }
+    var hour: String {
+        if _hour == nil {
+            _hour = ""
+        }
+        
+        return _hour
+    }
     
     var date: String {
         if _date == nil {
@@ -40,24 +41,12 @@ class Forecast {
         return _weatherDesc
     }
     
-    
-    var minTemp: String  {
-        if _minTemp == nil {
-            _minTemp = ""
-        }
-        
-        return _minTemp
-    }
-    
-    
-    var maxTemp: String {
+    var maxTemp: Double {
         if _maxTemp == nil {
-            _maxTemp = ""
+            _maxTemp = 0.0
         }
         
         return _maxTemp
     }
-    
-
     
 }

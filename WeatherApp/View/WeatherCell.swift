@@ -14,30 +14,101 @@ class WeatherCell: UITableViewCell {
     @IBOutlet weak var wheaterImageView: UIImageView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var weatherDescLabel: UILabel!
-    @IBOutlet weak var maxTempLabel: UILabel!
-    @IBOutlet weak var minTempLabel: UILabel!
+
+    
+    @IBOutlet var hourLabels: [UILabel]!
+    @IBOutlet var tempLbls: [UILabel]!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        //self.contentView.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        for lbls in tempLbls {
+            lbls.text = ""
+        }
+        
+        for lbl in hourLabels {
+            lbl.text = ""
+        }
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        for lbls in tempLbls {
+            lbls.text = ""
+        }
+        
+        for lbl in hourLabels {
+            lbl.text = ""
+        }
+    }
     
     func configureUIWithForecastData(forecast: Forecast) {
         wheaterImageView.image = UIImage(named: forecast.weatherDescription)
         weatherDescLabel.text = forecast.weatherDescription
         dayLabel.text = forecast.date
-        maxTempLabel.text = forecast.maxTemp
-        minTempLabel.text = forecast.minTemp
+      
     }
     
+    func configureCellWithForecastModel(forecast: ForecastModel){
+        wheaterImageView.image = UIImage(named: forecast.weatherDescription!)
+        weatherDescLabel.text = forecast.weatherDescription!
+        dayLabel.text = forecast.date!
+    }
     
+    func configureUIWithHourlyData(forecasts: [Forecast]){
+        var maxTemps = [Int]()
+        var hours = [Int]()
+        for forec in forecasts {
+            let maxtemp = Int(forec.maxTemp - 273)
+            let hour = Int(forec.hour)
+            maxTemps.append(maxtemp)
+            hours.append(hour! - 1)
+        }
+        
+        
+        for index in 0..<maxTemps.count {
+            tempLbls[index].text = "\(maxTemps[index])°"
+            if hours[index] < 10 {
+                hourLabels[index].text = "0\(hours[index])"
+            }
+            else {
+                hourLabels[index].text = "\(hours[index])"
+            }
+        }
+        
+        maxTemps = [Int]()
+        hours = [Int]()
+        
+    }
+    
+    func configureCellWithOfflineHourlyData(forecasts: [HourlyModel]) {
+        var maxTemps = [Int]()
+        var hours = [Int]()
+        
+        for forecast in forecasts {
+            let maxTemp = Int(forecast.maxTemp - 273)
+            let hour = Int(forecast.hour!)
+            maxTemps.append(maxTemp)
+            hours.append(hour! - 1)
+            
+        }
+        
+        for index in 0..<maxTemps.count {
+            tempLbls[index].text = "\(maxTemps[index])°"
+            if hours[index] < 10 {
+                hourLabels[index].text = "0\(hours[index])"
+            }
+            else {
+                hourLabels[index].text = "\(hours[index])"
+            }
+        }
+        
+        maxTemps = [Int]()
+        hours = [Int]()
+        
+        
+    }
     
 }
